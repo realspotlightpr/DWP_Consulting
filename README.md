@@ -15,12 +15,14 @@ Run `npm ci` and `npm run dev`. Open the address printed by Vite. Use `npm run b
 
 ## Launch items requiring owner input
 
-- `config.js`: replace `bookingUrl` with the approved DWP Consulting booking calendar. It currently goes to the existing Dynasty contact page; it does not reserve a time.
+- `config.js`: replace `bookingUrl` with the approved DWP Consulting booking calendar. The discovery form currently validates locally and then continues to the existing Dynasty contact page; it does not transmit the entered answers.
 - Set `newsletterUrl` to the exact LinkedIn newsletter URL. Until supplied, the CTA opens an honest notice and links to the verified Dynasty LinkedIn company page.
 - Add verified social profiles to `socialLinks` in `config.js`. Only the verified LinkedIn company page is currently included; other channels have not been invented.
 - Supply approved past articles/videos to populate the content library. The current library links to real Dynasty planning, FAQ and LinkedIn resources; it does not present invented articles as past publications.
 - Confirm the mission wording. The original brief's mission sentence was incomplete; this version uses a proposed mission focused on clarity, coordination and purpose.
 - Confirm the final business disclosures and scope of services for DWP Consulting. The separate Dynasty advisory business's licenses, awards, testimonials and registration disclosures have not been represented as DWP Consulting credentials.
+- Set `verifiedTaxImpact` only from approved, documented reporting. It intentionally starts at `0`; the public meter says tracking begins at launch rather than inventing progress.
+- Replace the labeled client-conversation image placeholder and the reused hero clip with approved DWP Consulting photography/video.
 
 ## Assets
 

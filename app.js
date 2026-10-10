@@ -56,3 +56,49 @@ if(social) (config.socialLinks || []).forEach(item=>{
   if(!/^https:\/\//.test(item.url)) return;
   const a=document.createElement('a');a.href=item.url;a.textContent=item.label+' ↗';a.target='_blank';a.rel='noopener';social.append(a);
 });
+
+const processScenes = [...document.querySelectorAll('[data-scene]')];
+const processDots = [...document.querySelectorAll('[data-process]')];
+const processProgress = document.querySelector('.process-progress');
+function setProcess(index) {
+  processScenes.forEach((scene, i) => scene.classList.toggle('active', i === index));
+  processDots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+    dot.setAttribute('aria-current', i === index ? 'step' : 'false');
+  });
+  if (processProgress) {
+    const value = ((index + 1) / Math.max(processScenes.length, 1)) * 100;
+    if (matchMedia('(max-width: 720px)').matches) processProgress.style.width = `${value}%`;
+    else processProgress.style.height = `${value}%`;
+  }
+}
+processDots.forEach((dot, index) => dot.addEventListener('click', () => {
+  processScenes[index]?.scrollIntoView({behavior: reduced.matches ? 'auto' : 'smooth', block: 'center'});
+  setProcess(index);
+}));
+if (processScenes.length && 'IntersectionObserver' in window) {
+  const processObserver = new IntersectionObserver(entries => {
+    const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible) setProcess(Number(visible.target.dataset.scene));
+  }, {rootMargin: '-32% 0px -32%', threshold: [0.15, 0.45, 0.75]});
+  processScenes.forEach(scene => processObserver.observe(scene));
+  setProcess(0);
+}
+
+const impactMeter = document.querySelector('.impact-meter');
+if (impactMeter) {
+  const current = Math.max(0, Number(config.verifiedTaxImpact ?? impactMeter.dataset.current));
+  const goal = Math.max(1, Number(config.taxImpactGoal ?? impactMeter.dataset.goal));
+  const percentage = Math.min(100, current / goal * 100);
+  impactMeter.style.setProperty('--impact-progress', percentage.toFixed(2));
+  const value = document.querySelector('#impact-value');
+  if (value && current > 0) value.textContent = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD', maximumFractionDigits: 0}).format(current);
+}
+
+const discoveryForm = document.querySelector('#discovery-form');
+if (discoveryForm) discoveryForm.addEventListener('submit', event => {
+  event.preventDefault();
+  if (!discoveryForm.reportValidity()) return;
+  const destination = config.bookingUrl || '/';
+  window.location.assign(destination);
+});

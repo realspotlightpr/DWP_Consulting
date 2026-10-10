@@ -6,4 +6,6 @@ Verified in browser: desktop homepage and library rendering; 390px mobile iframe
 
 Automated verification: both route documents, local referenced files, hero media, metadata and one H1 per page; JavaScript syntax check.
 
-Not yet live. No GitHub repository or Netlify destination was supplied. No appointment or newsletter signup was submitted. Direct booking and newsletter URLs, remaining social channels, final mission wording, approved archive content and business disclosures remain launch inputs. See README.md and config.js.
+The first version is live on ChatGPT Sites and backed up to `realspotlightpr/DWP_Consulting`. The current update adds a five-stage engagement story, the $1B tax-impact mission and verified-progress meter, a prominent LinkedIn newsletter banner, an honest discovery-call handoff form, and a clearly labeled photography placeholder.
+
+Still requiring owner input: the direct booking calendar, LinkedIn newsletter URL, current verified tax-impact total, approved photography, replacement hero video, final mission wording, approved archive content, and business disclosures. See README.md and config.js.
