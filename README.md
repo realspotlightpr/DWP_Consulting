@@ -22,12 +22,12 @@ Run `npm ci` and `npm run dev`. Open the address printed by Vite. Use `npm run b
 - Confirm the mission wording. The original brief's mission sentence was incomplete; this version uses a proposed mission focused on clarity, coordination and purpose.
 - Confirm the final business disclosures and scope of services for DWP Consulting. The separate Dynasty advisory business's licenses, awards, testimonials and registration disclosures have not been represented as DWP Consulting credentials.
 - Set `verifiedTaxImpact` only from approved, documented reporting. It intentionally starts at `0`; the public meter says tracking begins at launch rather than inventing progress.
-- Replace the labeled client-conversation image placeholder and the reused hero clip with approved DWP Consulting photography/video.
+- Replace the labeled client-conversation image placeholder with approved DWP Consulting photography.
 
 ## Assets
 
 - `assets/logo.png`: 1254px AI-cleaned version of the supplied logo. Inspect against original before brand approval; generative reconstruction is not a vector tracing.
-- Hero video: Pexels clip 7584599, already embedded in the supplied Dynasty reference website. Source: https://videos.pexels.com/video-files/7584599/7584599-sd_960_506_25fps.mp4 . Local optimized excerpt, no audio. Confirm continued use is appropriate for this extension brand.
+- Hero video: Pexels clip 8523641, showing a couple reviewing financial options with an advisor. Source: https://www.pexels.com/video/couple-looking-at-the-worker-s-laptop-8523641/ . Local 960×540 version, no audio.
 - Fonts: DM Sans and Manrope via Google Fonts, with local system fallbacks.
 
 ## Validation
