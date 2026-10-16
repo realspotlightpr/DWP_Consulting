@@ -27,7 +27,7 @@ Run `npm ci` and `npm run dev`. Open the address printed by Vite. Use `npm run b
 ## Assets
 
 - `assets/logo.png`: 1254px AI-cleaned version of the supplied logo. Inspect against original before brand approval; generative reconstruction is not a vector tracing.
-- Hero video: Pexels clip 8523641, showing a couple reviewing financial options with an advisor. Source: https://www.pexels.com/video/couple-looking-at-the-worker-s-laptop-8523641/ . Local 960×540 version, no audio.
+- Hero video: Pexels clip 5426204, showing a physician-led consultation in a healthcare setting. Source: https://www.pexels.com/video/young-doctors-sharing-ideas-5426204/ . Local 960×540 version, no audio.
 - Fonts: DM Sans and Manrope via Google Fonts, with local system fallbacks.
 
 ## Validation
